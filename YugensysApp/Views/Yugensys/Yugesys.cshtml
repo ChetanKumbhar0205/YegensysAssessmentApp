@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Yugesys</title>
+    <script src="~/Content/JS/jquery.min.js"></script>
+    <script>
+        function GetFruit() {
+            var color = $("#txtInfo").val();
+            $.ajax({
+                type: "post",
+                url: "/Yugensys/GetFruit/",
+                data: { color: color },
+                datatype: "json",
+                success: function (data) {
+                    lstFruit = JSON.parse(data.Data);
+                    if (lstFruit != null) {
+                        $("#divFruit").show();
+                        var item = [];
+                        item.push("<select id='drdFruit'>");
+                        item.push("<option value=''>Please Choose...</option>");
+                        for (var i = 0; i < lstFruit.length; i++) {
+                            var obj = lstFruit[i];
+                            item.push("<option value='" + obj.fruit + "'>" + obj.fruit + "</option>");
+                        }
+                        item.push("</select>");
+                        $("#divFruit").html(item.join(''));
+                    }
+                },
+                error: function () {
+
+                }
+            })
+        }
+        function AddPair() {
+            var color = $("#txtInfo").val();
+            var fruit = $("#drdFruit").val();
+            $.ajax({
+                type: "post",
+                url: "/Yugensys/AddFruit/",
+                data: { color: color, fruit: fruit },
+                datatype: "json",
+                success: function (data) {
+                    if (data.status == 1) {
+                        alert("Pair Added Successfully.");
+                        $("#txtInfo").val("");
+                    }
+                },
+                error: function () {
+
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div> 
+        <table>
+            <tr>
+                <td>
+                    Enter your info :
+                </td>
+                <td>
+                    <input type="text" id="txtInfo" onchange="GetFruit();"/>
+                </td>>
+            </tr>
+            <tr>
+                <td>
+                    Choose best answer:
+                </td>
+                <td>
+                    <div id="divFruit">
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" onclick="AddPair()" value="Submit"/>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>

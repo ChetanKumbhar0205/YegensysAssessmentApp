@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YugensysApp", "YugensysApp\YugensysApp.csproj", "{FFD67191-BA03-4EAB-B0E8-D792EB93F772}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFD67191-BA03-4EAB-B0E8-D792EB93F772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD67191-BA03-4EAB-B0E8-D792EB93F772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD67191-BA03-4EAB-B0E8-D792EB93F772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD67191-BA03-4EAB-B0E8-D792EB93F772}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F56B5A87-67E1-428B-8014-5881061B659F}
+	EndGlobalSection
+EndGlobal
